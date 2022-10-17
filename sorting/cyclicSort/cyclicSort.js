@@ -10,6 +10,7 @@ function cyclicSort(arr){
     while(i < arr.length){
         //check the correct index
         let correctIndex = arr[i] - 1
+        //if it is not correct index swapped
         if(arr[i] != arr[correctIndex]){
             swapped(arr, i, correctIndex);
         }else{
