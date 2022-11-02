@@ -8,4 +8,4 @@ function findUnique(n) {
 }
 let n = [2,3,3,4,2,6,4]
 console.log(findUnique(n))
-// stop 58
+// stop 1:54
