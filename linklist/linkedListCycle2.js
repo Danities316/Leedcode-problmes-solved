@@ -15,7 +15,7 @@
         fast = fast.next.next
         slow = slow.next
         if(fast == slow){
-            // calculate the
+            // calculate the length
             let temp = slow
             let lenght = 0
             
@@ -26,7 +26,6 @@
 
             return lenght
         }
-``
     }
     return 0
 };
@@ -40,27 +39,55 @@
     while(fast != null && fast.next != null){
         fast = fast.next.next
         slow = slow.next
+
+        //finding the length of the cycle
         if(fast == slow){
             length = lengthCycle(slow)
             break
         }
     }
+
+    //if no cycle is present return 0
     if(length == 0){
         return null
     }
+
     // find the start node
     let f = head
     let s = head
-
+    
+    //
     while(length > 0){
         s = s.next
         length--
     }
-    //Keep moving forward until they met at start
+    //Keep moving forward until they(both s and f) met at cycle start
     while(f != s){
         f = f.next
         s = s.next
-
     }
     return s
   }
+
+
+//   var detectCycle = function(head) {
+//   var fast = head, slow = head;
+//     while (fast && fast.next) {
+//         fast = fast.next.next;
+//         slow = slow.next;
+//         if (fast == slow) {
+//             break;
+//         }
+//     }
+    
+//     if (!fast || !fast.next) {
+//         return null;
+//     }
+
+//     while(head != slow) {
+//         head = head.next;
+//         slow = slow.next;
+//     }
+    
+//     return slow;
+// }
