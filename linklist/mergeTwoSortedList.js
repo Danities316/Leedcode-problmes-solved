@@ -27,3 +27,15 @@ function mergeTwoSortedList(list1, list2) {
     }
     return temp.next
 }
+
+function getMid(head) {
+    let midPrev = null
+    while(head != null && head.next != null){
+        midPrev = (midPrev == null) ? head : midPrev.next
+        head = head.next.next
+    }
+    mid = midPrev.next
+    midPrev.next = null
+    return mid
+    
+}
