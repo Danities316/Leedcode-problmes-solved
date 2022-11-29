@@ -1,13 +1,14 @@
-var triangle = function (row, col) {
+var triangle = function (row, col, straem = "") {
     if(row == 0){
         return
     }
     if(col < row){
-        console.log("*")
-        triangle(row, col + 1)
+        straem += "*"
+        triangle(row, col + 1, straem)
     }else{
-        console.log("\n")
-        triangle(row - 1, 0)
+        console.log(straem)
+        straem = ""
+        triangle(row - 1, 0, straem)
     }
 }
 triangle(4, 0)
