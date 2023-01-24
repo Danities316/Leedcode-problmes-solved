@@ -36,4 +36,50 @@ var merge = function (leftSide, rightSide) {
     }
     return newArr
 }
-console.log(mergeSort([5,3,8,10,4,1]))
+
+//Kunal pattern
+var mergeSort2 = function (arr) {
+    if(arr.length < 2){
+        return arr
+    }
+    let middle = Math.floor(arr.length / 2)
+
+    let leftSide = mergeSort2(arr.slice(0, middle))
+    let rightSide =mergeSort2(arr.slice(middle, arr.length))
+
+    return merge(leftSide, rightSide)
+    
+}
+
+var merge2 = function (leftSide, rightSide) {
+
+   let lengthSum = leftSide.length + rightSide.length;
+
+   let i = 0;
+   let j = 0;
+   let k = 0
+
+   while(i < leftSide.length && j < rightSide.length){
+    if(leftSide[i] < rightSide[j]){
+        lengthSum[k] = leftSide[i]
+        i++
+    }else{
+        lengthSum[k] = rightSide[j]
+        j++
+    }
+    k++
+   }
+   // if leftside arr content is more than the rightside spilled the remaining array to the end
+   while(i < leftSide.length){
+    lengthSum[k] = leftSide[i]
+    i++
+    k++
+   }
+   while(j < righ4.length){
+    lengthSum[k] = rightSide[i]
+    j++
+    k++
+   }
+   return lengthSum
+}
+console.log(mergeSort2([5,3,8,10,4,1]))
