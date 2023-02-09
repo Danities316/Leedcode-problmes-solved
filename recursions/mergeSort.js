@@ -1,3 +1,6 @@
+// Implementation of the merge sort algorithm is a three-step procedure. 
+// Divide, conquer, and combine.
+
 var mergeSort = function (arr) {
     if(arr.length < 2){
         return arr
